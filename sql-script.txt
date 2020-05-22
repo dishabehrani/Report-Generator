@@ -1,0 +1,30 @@
+
+CREATE USER 'springstudent'@'localhost' IDENTIFIED BY 'springstudent';
+
+GRANT ALL PRIVILEGES ON * . * TO 'springstudent'@'localhost';
+
+
+
+CREATE DATABASE  IF NOT EXISTS `employee_tracker` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `employee_tracker`;
+
+
+DROP TABLE IF EXISTS `employee`;
+
+CREATE TABLE `employee` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
+LOCK TABLES `employee` WRITE;
+
+INSERT INTO `employee` VALUES 
+	(1,'David','Adams','david@gmail.com'),
+	(2,'John','Doe','john@gmail.com'),
+	(3,'Ajay','Rao','ajay@gmail.com'),
+	(4,'Mary','Public','mary@gmail.com'),
+	(5,'Maxwell','Dixon','max@gmail.com');
+
